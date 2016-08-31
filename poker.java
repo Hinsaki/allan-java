@@ -1,5 +1,7 @@
 package tw.org.ikii.allanJava;
 
+import java.util.Arrays;
+
 public class poker {
 
 	public static void main(String[] args) {
@@ -27,8 +29,16 @@ public class poker {
 		for (int i=0; i<poker.length; i++){
 			player[i%4][i/4] = poker[i];
 		}
-		
-		
+		//攤牌
+		String[] suit={"桃","心","方","花"};
+		String[] value={"A","1","2","3","4","5","6","7","8","9","10","J","Q","K"};
+		for(int[] cards:player){
+			for(int card:cards){
+				Arrays.sort(cards);
+				System.out.print(suit[card/13]+value[card%13]+" ");
+			}
+			System.out.println();
+		}
 		
 		
 	}
